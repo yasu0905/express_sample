@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>sample</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/home.js"></script>
+    <link rel="stylesheet" href="/home.css" />
+  </head>
+  <body>
+    <!-- cssは自分でせい -->
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <h2 class="ui center aligned icoon header" id="mainTitle">
+          <i class="circular user icon"></i>
+          <%= title %>
+        </h2>
+        <div class="ui divider"></div>
+        <form id="form" method="POST" action="">
+          <div class="ui form">
+            <div id="targetFields">
+              <table border="1">
+                <thead>
+                  <tr>
+                    <td>名前</td>
+                    <td>フリガナ</td>
+                    <td>性別</td>
+                    <td>年齢</td>
+                    <td>住所</td>
+                    <td>職業</td>
+                    <td>TEL</td>
+                    <td>メールアドレス</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% for(let i = 0; i < body.length; i++) { %>
+                  <tr>
+                    <td><%= body[i].name %></td>
+                    <td><%= body[i].furigana %></td>
+                    <td><%= body[i].gender %></td>
+                    <td><%= body[i].age %></td>
+                    <td><%= body[i].address %></td>
+                    <td><%= body[i].job %></td>
+                    <td><%= body[i].tel %></td>
+                    <td><%= body[i].email %></td>
+                  </tr>
+                  <% } %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <button type="button" onclick="handleClick()">リクエスト</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
